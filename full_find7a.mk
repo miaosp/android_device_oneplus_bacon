@@ -22,28 +22,19 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/oppo/find7a/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := omni_find7a
+PRODUCT_NAME := pa_find7a
 PRODUCT_DEVICE := find7a
 PRODUCT_BRAND := Oppo
 PRODUCT_MODEL := Find7a
 PRODUCT_MANUFACTURER := Oppo
-
-# Inline kernel
-TARGET_KERNEL_SOURCE := kernel/oppo/msm8974
-TARGET_KERNEL_CONFIG := msm8974_find7_defconfig
 
 # Inherit from proprietary blobs
 $(call inherit-product-if-exists, vendor/oppo/find7a/find7a-vendor.mk)

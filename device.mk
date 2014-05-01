@@ -25,10 +25,6 @@ PRODUCT_PACKAGES += \
         VisualizationWallpapers \
         librs_jni
 
-# Omni Packages
-PRODUCT_PACKAGES += \
-	OmniTorch
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
         device/oppo/find7a/configs/init.find7a.rc:root/init.qcom.rc \

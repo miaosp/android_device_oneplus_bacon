@@ -88,8 +88,6 @@
         <item>255</item>  <!-- 3000+ -->
     </integer-array>
 
-    <!-- Boolean indicating whether we want button brightness support -->
-    <bool name="config_button_brightness_support">true</bool>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -241,5 +239,4 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">7</integer>
 
-    <bool name="config_offscreenGestureSupport">true</bool>
 </resources>
