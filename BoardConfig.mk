@@ -119,6 +119,13 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/configs/fstab.find7a
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# SELinux
+BOARD_SEPOLICY_DIRS += device/oppo/find7a/sepolicy
+BOARD_SEPOLICY_UNION += \
+       app.te \
+       device.te \
+       file_contexts 
+
 # TWRP specific build flags
 DEVICE_RESOLUTION := 1080x1920
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
