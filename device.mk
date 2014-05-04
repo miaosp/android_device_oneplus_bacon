@@ -111,13 +111,15 @@ PRODUCT_PACKAGES += \
     gralloc.msm8974 \
     copybit.msm8974 \
     memtrack.msm8974 \
+    lights.qcom \
+    camera-wrapper.msm8974
+
+PRODUCT_PACKAGES += \
     audio.primary.msm8974 \
     audio_policy.msm8974 \
-    lights.qcom \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    camera-wrapper.msm8974 \
     libaudio-resampler
 
 PRODUCT_PACKAGES += \
