@@ -79,8 +79,11 @@ PRODUCT_COPY_FILES += \
 
 # Wifi config
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/oppo/find7a/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    device/oppo/find7a/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/oppo/find7a/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/oppo/find7a/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+    device/oppo/find7a/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    device/oppo/find7a/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -133,7 +136,9 @@ PRODUCT_PACKAGES += \
 # wifi
 PRODUCT_PACKAGES += \
     mac-update \
-    wcnss_service
+    wcnss_service \
+    WCNSS_qcom_cfg.ini \
+    WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/configs/init.find7a.bt.sh:system/etc/init.find7a.bt.sh
