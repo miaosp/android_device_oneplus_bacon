@@ -534,6 +534,12 @@ service diag_mdlog /system/bin/diag_mdlog -s 100
     class late_start
     disabled
 
+service wifi-crda /system/bin/sh /system/etc/init.crda.sh
+   class late_start
+   user root
+   disabled
+   oneshot
+
 # on property:gsm.sim.state=READY
 #    start diag_mdlog
 

@@ -71,7 +71,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/init.qcom.syspart_fixup.sh:system/etc/init.qcom.syspart_fixup.sh \
     device/oppo/find7a/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
-    device/oppo/find7a/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
+    device/oppo/find7a/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    device/oppo/find7a/init.crda.sh:system/etc/init.crda.sh
 
 #thermal-engine
 PRODUCT_COPY_FILES += \
@@ -140,7 +141,9 @@ PRODUCT_PACKAGES += \
     mac-update \
     wcnss_service \
     WCNSS_qcom_cfg.ini \
-    WCNSS_qcom_wlan_nv.bin
+    WCNSS_qcom_wlan_nv.bin \
+    regulatory.bin \
+    crda
 
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/configs/init.find7a.bt.sh:system/etc/init.find7a.bt.sh
