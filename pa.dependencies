@@ -66,9 +66,9 @@
         "revision":    "cm-11.0"
     },
     {
-        "remote":      "github",
-        "repository":  "teamgruntled/proprietary_vendor_oppo",
+        "remote":      "legacy-blobs",
+        "repository":  "proprietary_vendor_oppo",
         "target_path": "vendor/oppo",
-        "revision":    "android-4.4"
+        "revision":    "kitkat"
     }
 ]
