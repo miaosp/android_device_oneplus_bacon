@@ -187,6 +187,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.cellbroadcast.emergencyids=0-65534
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=10 \
     telephony.lteOnCdmaDevice=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
