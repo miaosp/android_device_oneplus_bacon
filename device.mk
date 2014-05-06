@@ -62,9 +62,7 @@ PRODUCT_COPY_FILES += \
 # qcom init stuff
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/init.qcom.syspart_fixup.sh:system/etc/init.qcom.syspart_fixup.sh \
-    device/oppo/find7a/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
-    device/oppo/find7a/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
-    device/oppo/find7a/init.crda.sh:system/etc/init.crda.sh
+    device/oppo/find7a/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
 
 #thermal-engine
 PRODUCT_COPY_FILES += \
