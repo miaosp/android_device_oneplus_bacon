@@ -155,6 +155,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/gps/gps.conf:system/etc/gps.conf
 
+# Sensor configuration from Oppo
+PRODUCT_COPY_FILES += \
+    device/oppo/find7a/sensor/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+
 # Properties
 
 # bluetooth
@@ -235,6 +239,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+
+#Sensor test
+PRODUCT_COPY_FILES += \
+    device/oppo/find7a/sensor/libsensor_thresh.so:/vendor/lib/libsensor_thresh.so
 
 # gps
 #system prop for switching gps driver to qmi
