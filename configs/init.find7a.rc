@@ -252,6 +252,12 @@ on post-fs-data
     mkdir /dev/socket/mpdecision 0770 system system
     chmod 2770 /dev/socket/mpdecision
 
+    mkdir /data/misc/quipc 0770 system gps
+
+    mkdir /data/misc/location 0770 gps gps
+    mkdir /data/misc/location/mq 0770 gps gps
+    mkdir /data/misc/location/xtwifi 0770 gps gps
+
     # Tombstone dropboxes
     mkdir /data/tombstones 0771 system system
     mkdir /data/tombstones/modem 0771 system system
