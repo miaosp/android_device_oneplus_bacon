@@ -126,6 +126,14 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libc2dcolorconvert
 
+# GPS
+PRODUCT_PACKAGES += \
+    libloc_adapter \
+    libloc_api_v02 \
+    libgps.utils \
+    libizat_core \
+    flp.msm8974
+
 # wifi
 PRODUCT_PACKAGES += \
     mac-update \
