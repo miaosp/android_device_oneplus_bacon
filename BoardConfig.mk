@@ -59,6 +59,9 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/oppo/find7a/cmhw
 
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
+
 # Display
 TARGET_QCOM_DISPLAY_VARIANT := caf-new
 USE_OPENGL_RENDERER := true
