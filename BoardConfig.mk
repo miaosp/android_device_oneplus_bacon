@@ -135,6 +135,7 @@ BOARD_SEPOLICY_DIRS += device/oppo/find7a/sepolicy
 BOARD_SEPOLICY_UNION += \
        app.te \
        device.te \
+       vold.te \
        file_contexts 
 
 # TWRP specific build flags
