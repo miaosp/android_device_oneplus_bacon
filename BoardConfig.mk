@@ -2,7 +2,7 @@
 -include vendor/oppo/find7a/BoardConfigVendor.mk
 
 # inherit from the common repository
--include device/oppo/msm8974-common/BoardConfigCommon.mk
+include device/oppo/msm8974-common/BoardConfigCommon.mk
 
 LOCAL_PATH := device/oppo/find7a
 
@@ -11,7 +11,6 @@ TARGET_BOOTLOADER_BOARD_NAME := find7a
 TARGET_OTA_ASSERT_DEVICE := find7a
 
 # Inline kernel
-TARGET_KERNEL_SOURCE := kernel/oppo/msm8974
 TARGET_KERNEL_CONFIG := msm8974_find7_defconfig
 
 # Platform
@@ -57,13 +56,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
-
-
-# CM Hardware
-BOARD_HARDWARE_CLASS += device/oppo/find7a/cmhw
-
-# Enable workaround for slow rom flash
-BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Display
 TARGET_QCOM_DISPLAY_VARIANT := caf-new
@@ -132,14 +124,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/configs/fstab.find7a
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
-
-# SELinux
-BOARD_SEPOLICY_DIRS += device/oppo/find7a/sepolicy
-BOARD_SEPOLICY_UNION += \
-       app.te \
-       device.te \
-       vold.te \
-       file_contexts 
 
 # TWRP specific build flags
 DEVICE_RESOLUTION := 1080x1920
