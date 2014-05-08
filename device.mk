@@ -126,14 +126,6 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libc2dcolorconvert
 
-# GPS
-PRODUCT_PACKAGES += \
-    libloc_adapter \
-    libloc_api_v02 \
-    libgps.utils \
-    libizat_core \
-    flp.msm8974
-
 # wifi
 PRODUCT_PACKAGES += \
     mac-update \
@@ -160,7 +152,8 @@ PRODUCT_COPY_FILES += \
 # GPS configuration
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/gps/gps.conf:system/etc/gps.conf \
-    device/oppo/find7a/gps/izat.conf:system/etc/izat.conf
+    device/oppo/find7a/gps/izat.conf:system/etc/izat.conf \
+    device/oppo/find7a/gps/sap.conf:system/etc/sap.conf
 
 # Sensor configuration from Oppo
 PRODUCT_COPY_FILES += \
