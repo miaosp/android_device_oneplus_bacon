@@ -33,22 +33,18 @@ on init
 
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /storage/sdcard0 0700 root root
-
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0700 root root
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/usbdisk 0700 root root
 
     # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
-
     symlink /storage/sdcard1 /extSdCard
     symlink /storage/sdcard1 /mnt/extSdCard
-
-    # USB otg
-    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
-    mkdir /storage/usbdisk 0700 root root
-    symlink /mnt/media_rw/usbdisk /usbdisk
-    symlink /mnt/media_rw/usbdisk /mnt/usbdisk
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
 
     # bluetooth
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
@@ -61,7 +57,7 @@ on init
     mount vfat /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro noatime noauto_da_alloc shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
 
 on fs
-#    mount_all ./fstab.find7a
+    mount_all ./fstab.qcom
     setprop ro.crypto.fuse_sdcard true
 
 on early-boot
