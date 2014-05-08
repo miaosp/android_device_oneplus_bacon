@@ -1,6 +1,9 @@
 # inherit from the proprietary version
 -include vendor/oppo/find7a/BoardConfigVendor.mk
 
+# inherit from the common repository
+-include device/oppo/msm8974-common/BoardConfigCommon.mk
+
 LOCAL_PATH := device/oppo/find7a
 
 TARGET_NO_BOOTLOADER := true
