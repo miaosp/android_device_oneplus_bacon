@@ -119,7 +119,7 @@ SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # Recovery:Start
 
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/configs/fstab.find7a
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.find7a
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true

@@ -12,11 +12,11 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/configs/init.find7a.rc:root/init.qcom.rc \
-    device/oppo/find7a/configs/init.find7a.usb.rc:root/init.find7a.usb.rc \
-    device/oppo/find7a/configs/ueventd.find7a.rc:root/ueventd.qcom.rc \
-    device/oppo/find7a/configs/fstab.find7a:root/fstab.qcom \
-    device/oppo/find7a/configs/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/oppo/find7a/rootdir/init.find7a.rc:root/init.qcom.rc \
+    device/oppo/find7a/rootdir/init.find7a.usb.rc:root/init.find7a.usb.rc \
+    device/oppo/find7a/rootdir/ueventd.find7a.rc:root/ueventd.qcom.rc \
+    device/oppo/find7a/rootdir/fstab.find7a:root/fstab.qcom \
+    device/oppo/find7a/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Config files for touch and input
 PRODUCT_COPY_FILES += \
@@ -93,7 +93,7 @@ PRODUCT_PACKAGES += \
     crda
 
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/configs/init.find7a.bt.sh:system/etc/init.find7a.bt.sh
+    device/oppo/find7a/rootdir/etc/init.find7a.bt.sh:system/etc/init.find7a.bt.sh
 
 
 # Sensor configuration from Oppo
