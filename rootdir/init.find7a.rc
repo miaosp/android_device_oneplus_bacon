@@ -161,6 +161,10 @@ on boot
     chown system camera /sys/class/leds/led:flash_torch/brightness
     chmod 0666 /sys/class/leds/led:flash_torch/brightness
 
+    ## Capacitive Disable
+     chown system system /sys/aospa/capacitive_disable
+     chmod 0666 /sys/aospa/capacitive_disable
+
     # NFC: create data/nfc for nv storage
     mkdir /data/nfc 770 nfc nfc
     mkdir /data/nfc/param 770 nfc nfc
