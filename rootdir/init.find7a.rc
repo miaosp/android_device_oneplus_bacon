@@ -15,6 +15,7 @@
 #
 
 import init.find7a.usb.rc
+#import init.pa.rc
 
 on early-init
     mkdir /system
@@ -367,12 +368,18 @@ service rmt_storage /system/bin/rmt_storage
 #    class main
 #    user wifi
 #    oneshot
-    
+
 #service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
 #    class main
 #    user bluetooth
 #    group system bluetooth
-#    oneshot 
+#    oneshot
+
+service userinit /system/xbin/busybox run-parts /system/etc/init.d
+    oneshot
+    class late_start
+    user root
+    group root
 
 service config_bluetooth /system/bin/sh /system/etc/init.find7a.bt.sh "onboot"
     class core
@@ -574,6 +581,6 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
-    
+
 on property:ro.fuse_sdcard=true
-    start sdcard    
+    start sdcard

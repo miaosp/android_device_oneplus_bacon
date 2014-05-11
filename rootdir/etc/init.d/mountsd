@@ -1,0 +1,14 @@
+#!/system/bin/sh
+
+LOG_FILE=/data/mountsd.log
+
+get_system_mount() {
+    mount | busybox grep /mnt/media_rw/sdcard0 | busybox awk '{print $4}' | busybox cut -d ',' -f1
+}
+
+# execute script using busybox
+busybox chown media_rw:media_rw /mnt/media_rw/sdcard0  >> $LOG_FILE
+
+if [ get_system_mount == ro ]; then
+busybox chmod 0700 /mnt/media_rw/sdcard0 >> $LOG_FILE
+fi

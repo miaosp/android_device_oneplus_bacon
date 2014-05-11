@@ -95,6 +95,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/rootdir/etc/init.find7a.bt.sh:system/etc/init.find7a.bt.sh
 
+# recursively chown media_rw script
+PRODUCT_COPY_FILES += \
+    device/oppo/find7a/rootdir/etc/init.d/mountsd:system/etc/init.d/mountsd
+
+PRODUCT_COPY_FILES += \
+    device/oppo/find7a/rootdir/etc/init.d/mvcache:system/etc/init.d/mvcache
 
 # Sensor configuration from Oppo
 PRODUCT_COPY_FILES += \
@@ -153,5 +159,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #Sensor test
 PRODUCT_COPY_FILES += \
     device/oppo/find7a/sensor/libsensor_thresh.so:/vendor/lib/libsensor_thresh.so
-
-
