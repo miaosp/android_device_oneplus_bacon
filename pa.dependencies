@@ -8,7 +8,7 @@
     {
         "repository":  "device_oppo_msm8974-common",
         "target_path": "device/oppo/msm8974-common"
-    },    
+    },
     {
         "remote":       "cm",
         "repository":   "CyanogenMod/android_hardware_qcom_bt",
@@ -62,7 +62,7 @@
         "repository":   "CyanogenMod/android_device_qcom_common",
         "target_path":  "device/qcom/common",
         "revision":     "cm-11.0"
-    },    
+    },
     {
         "remote":      "github",
         "repository":  "CyanogenMod/android_hardware_qcom_audio-caf",
@@ -70,9 +70,9 @@
         "revision":    "cm-11.0"
     },
     {
-        "remote":      "legacy-blobs",
-        "repository":  "proprietary_vendor_oppo",
+        "remote":      "github",
+        "repository":  "teamgruntled/proprietary_vendor_oppo",
         "target_path": "vendor/oppo",
-        "revision":    "kitkat"
+        "revision":    "android-4.4"
     }
 ]
