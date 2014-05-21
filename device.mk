@@ -6,6 +6,9 @@
 # Inherit commom repo
 $(call inherit-product, device/oppo/msm8974-common/oppo.mk)
 
+# Device specific overlays
+DEVICE_PACKAGE_OVERLAYS := device/oppo/find7a/overlay
+
 PRODUCT_PACKAGES += \
     charger_res_images_find7a \
     charger_find7a
