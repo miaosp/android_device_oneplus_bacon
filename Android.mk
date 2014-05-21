@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter find7a,$(TARGET_DEVICE)),)
+ifneq ($(filter bacon,$(TARGET_DEVICE)),)
     include $(all-subdir-makefiles)
 
 # Symlink firmware from /persist

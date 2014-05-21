@@ -1,17 +1,16 @@
 # inherit from the proprietary version
--include vendor/oppo/find7a/BoardConfigVendor.mk
+-include vendor/oppo/bacon/BoardConfigVendor.mk
 
 # inherit from the common repository
 include device/oppo/msm8974-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/oppo/find7a
+LOCAL_PATH := device/oneplus/bacon
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := find7a
-TARGET_OTA_ASSERT_DEVICE := find7a, X9006
-
+TARGET_OTA_ASSERT_DEVICE := bacon
 # Inline kernel
-TARGET_KERNEL_CONFIG := msm8974_find7_defconfig
+TARGET_KERNEL_CONFIG := msm8974_find7op_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
@@ -37,13 +36,13 @@ TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.selinux=permissive androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.selinux=permissive androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_BASE :=  0x80200000
 #BOARD_FORCE_RAMDISK_ADDRESS := 0x05000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 #BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-BOARD_CUSTOM_BOOTIMG_MK := device/oppo/find7a/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/oppo/bacon/mkbootimg.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00F00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00F00000
@@ -53,9 +52,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # global
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # Display
 TARGET_QCOM_DISPLAY_VARIANT := caf-new
@@ -98,7 +94,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 
-BOARD_EGL_CFG := device/oppo/find7a/configs/egl.cfg
+BOARD_EGL_CFG := device/oneplus/bacon/configs/egl.cfg
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
@@ -107,7 +103,7 @@ SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # Recovery:Start
 
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.find7a
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.bacon
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true

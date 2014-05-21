@@ -27,15 +27,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/oppo/find7a/device.mk)
+$(call inherit-product, device/oppo/bacon/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := pa_find7a
-PRODUCT_DEVICE := find7a
-PRODUCT_BRAND := Oppo
-PRODUCT_MODEL := Find7a
-PRODUCT_MANUFACTURER := Oppo
+PRODUCT_NAME := pa_bacon
+PRODUCT_DEVICE := Bacon
+PRODUCT_BRAND := oneplus
+PRODUCT_MODEL := one
+PRODUCT_MANUFACTURER := OnePlus
 
 # Inherit from proprietary blobs
-$(call inherit-product-if-exists, vendor/oppo/find7a/find7a-vendor.mk)
+$(call inherit-product-if-exists, vendor/oppo/bacon/bacon-vendor.mk)
 
