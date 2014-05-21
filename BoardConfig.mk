@@ -8,7 +8,7 @@ LOCAL_PATH := device/oppo/find7a
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := find7a
-TARGET_OTA_ASSERT_DEVICE := find7a
+TARGET_OTA_ASSERT_DEVICE := find7a, X9006
 
 # Inline kernel
 TARGET_KERNEL_CONFIG := msm8974_find7_defconfig
