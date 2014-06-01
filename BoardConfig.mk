@@ -2,12 +2,12 @@
 -include vendor/oppo/bacon/BoardConfigVendor.mk
 
 # inherit from the common repository
-include device/oppo/msm8974-common/BoardConfigCommon.mk
+include device/oppo/common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/oneplus/bacon
+LOCAL_PATH := device/oppo/bacon
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := find7a
+TARGET_BOOTLOADER_BOARD_NAME := bacon
 TARGET_OTA_ASSERT_DEVICE := bacon
 # Inline kernel
 TARGET_KERNEL_CONFIG := msm8974_find7op_defconfig
@@ -44,8 +44,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 #BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_CUSTOM_BOOTIMG_MK := device/oppo/bacon/mkbootimg.mk
 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00F00000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00F00000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00FF0000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00FF0000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -94,7 +94,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 
-BOARD_EGL_CFG := device/oneplus/bacon/configs/egl.cfg
+BOARD_EGL_CFG := device/oppo/bacon/configs/egl.cfg
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
@@ -104,6 +104,8 @@ SENSORS_NEED_SETRATE_ON_ENABLE := true
 # Recovery:Start
 
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.bacon
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"fontcn46_28x73.h\"
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -126,3 +128,8 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # binaries. Decrease the size if RAM or Flash Storage size is a limitation
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DNO_SECURE_DISCARD
+TARGET_USES_QCOM_BSP := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true

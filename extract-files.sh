@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=oppo
-DEVICE=find7a
+DEVICE=bacon
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $BASE/*

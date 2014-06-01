@@ -1,64 +1,66 @@
-# This file includes all definitions that apply to ALL find7a devices, and
-# are also specific to find7a devices
+# This file includes all definitions that apply to ALL bacon devices, and
+# are also specific to bacon devices
 #
 # Everything in this directory will become public
 
 # Inherit commom repo
-$(call inherit-product, device/oppo/msm8974-common/oppo.mk)
+#$(call inherit-product, device/oppo/msm8974-common/oppo.mk)
+# Inherit from proprietary blobs
+$(call inherit-product-if-exists, vendor/oppo/bacon/bacon-vendor.mk)
 
 # Device specific overlays
-DEVICE_PACKAGE_OVERLAYS := device/oppo/find7a/overlay
+DEVICE_PACKAGE_OVERLAYS := device/oppo/bacon/overlay
 
 PRODUCT_PACKAGES += \
-    charger_res_images_find7a \
-    charger_find7a
+    charger_res_images_bacon \
+    charger_bacon
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/rootdir/init.find7a.rc:root/init.qcom.rc \
-    device/oppo/find7a/rootdir/init.find7a.usb.rc:root/init.find7a.usb.rc \
-    device/oppo/find7a/rootdir/ueventd.find7a.rc:root/ueventd.qcom.rc \
-    device/oppo/find7a/rootdir/fstab.find7a:root/fstab.qcom \
-    device/oppo/find7a/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/oppo/bacon/rootdir/init.bacon.rc:root/init.qcom.rc \
+    device/oppo/bacon/rootdir/init.bacon.usb.rc:root/init.bacon.usb.rc \
+    device/oppo/bacon/rootdir/ueventd.bacon.rc:root/ueventd.qcom.rc \
+    device/oppo/bacon/rootdir/fstab.bacon:root/fstab.qcom \
+    device/oppo/bacon/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Config files for touch and input
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/oppo/find7a/configs/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-    device/oppo/find7a/configs/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-    device/oppo/find7a/configs/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl
+    device/oppo/bacon/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/oppo/bacon/configs/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+    device/oppo/bacon/configs/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
+    device/oppo/bacon/configs/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl
 
 # Media config files
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/media_codecs.xml:system/etc/media_codecs.xml \
-    device/oppo/find7a/media_profiles.xml:system/etc/media_profiles.xml
+    device/oppo/bacon/media_codecs.xml:system/etc/media_codecs.xml \
+    device/oppo/bacon/media_profiles.xml:system/etc/media_profiles.xml
 
 # Audio config files
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    device/oppo/find7a/mixer_paths.xml:/system/etc/mixer_paths.xml
+    device/oppo/bacon/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    device/oppo/bacon/mixer_paths.xml:/system/etc/mixer_paths.xml
 
 
 # qcom init stuff
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/init.qcom.syspart_fixup.sh:system/etc/init.qcom.syspart_fixup.sh \
-    device/oppo/find7a/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
+    device/oppo/bacon/init.qcom.syspart_fixup.sh:system/etc/init.qcom.syspart_fixup.sh \
+    device/oppo/bacon/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
 
 #sdcard permissions fix
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/configs/init.sdcard_perms.sh:system/etc/init.sdcard_perms.sh \
+    device/oppo/bacon/configs/init.sdcard_perms.sh:system/etc/init.sdcard_perms.sh \
 
 #thermal-engine
 PRODUCT_COPY_FILES += \
-        device/oppo/find7a/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
+        device/oppo/bacon/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
 # Wifi config
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/oppo/find7a/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/oppo/find7a/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
-    device/oppo/find7a/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/oppo/find7a/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    device/oppo/bacon/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/oppo/bacon/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/oppo/bacon/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+    device/oppo/bacon/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    device/oppo/bacon/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 # Hardware modules to build
 PRODUCT_PACKAGES += \
@@ -100,18 +102,18 @@ PRODUCT_PACKAGES += \
     crda
 
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/rootdir/etc/init.find7a.bt.sh:system/etc/init.find7a.bt.sh
+    device/oppo/bacon/rootdir/etc/init.bacon.bt.sh:system/etc/init.bacon.bt.sh
 
 # recursively chown media_rw script
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/rootdir/etc/init.d/mountsd:system/etc/init.d/mountsd
+    device/oppo/bacon/rootdir/etc/init.d/mountsd:system/etc/init.d/mountsd
 
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/rootdir/etc/init.d/mvcache:system/etc/init.d/mvcache
+    device/oppo/bacon/rootdir/etc/init.d/mvcache:system/etc/init.d/mvcache
 
 # Sensor configuration from Oppo
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/sensor/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+    device/oppo/bacon/sensor/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
 
 # Properties
 
@@ -165,4 +167,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #Sensor test
 PRODUCT_COPY_FILES += \
-    device/oppo/find7a/sensor/libsensor_thresh.so:/vendor/lib/libsensor_thresh.so
+    device/oppo/bacon/sensor/libsensor_thresh.so:/vendor/lib/libsensor_thresh.so
+    
+# Inherit from proprietary blobs
+$(call inherit-product-if-exists, vendor/oppo/bacon/bacon-vendor.mk)
+
+# Inherit from oppo-common
+$(call inherit-product, device/oppo/common/common.mk)

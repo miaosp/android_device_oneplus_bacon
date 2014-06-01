@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-import init.find7a.usb.rc
+import init.bacon.usb.rc
 #import init.pa.rc
 
 on early-init
@@ -454,12 +454,12 @@ service userinit /system/xbin/busybox run-parts /system/etc/init.d
     user root
     group root
 
-service config_bluetooth /system/bin/sh /system/etc/init.find7a.bt.sh "onboot"
+service config_bluetooth /system/bin/sh /system/etc/init.bacon.bt.sh "onboot"
     class core
     user root
     oneshot
 
-service hciattach /system/bin/sh /system/etc/init.find7a.bt.sh
+service hciattach /system/bin/sh /system/etc/init.bacon.bt.sh
     class late_start
     user bluetooth
     group qcom_oncrpc bluetooth net_bt_admin system
@@ -565,7 +565,7 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
 
-service charger /charger_find7a
+service charger /charger_bacon
     class charger
 
 #start camera server as daemon

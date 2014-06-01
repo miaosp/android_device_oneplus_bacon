@@ -1,0 +1,36 @@
+[
+    {
+        "remote":      "github",
+        "repository":  "Ayysir/android_kernel_oppo_msm8974",
+        "target_path": "kernel/oppo/msm8974",
+        "revision":    "kitkat"
+    },
+    {
+        "repository":  "device_oppo_msm8974-common",
+        "target_path": "device/oppo/msm8974-common"
+    },
+    {
+        "remote":       "github",
+        "repository":   "CyanogenMod/android_hardware_qcom_display-caf-new",
+        "target_path":  "hardware/qcom/display-caf-new",
+        "revision":     "cm-11.0"
+    },
+    {
+        "remote":       "cm",
+        "repository":   "CyanogenMod/android_hardware_qcom_media-caf-new",
+        "target_path":  "hardware/qcom/media-caf-new",
+        "revision":     "cm-11.0"
+    },
+    {
+        "remote":      "github",
+        "repository":  "CyanogenMod/android_hardware_qcom_audio-caf",
+        "target_path": "hardware/qcom/audio-caf",
+        "revision":    "cm-11.0"
+    },
+    {
+        "remote":      "github",
+        "repository":  "teamgruntled/proprietary_vendor_oppo",
+        "target_path": "vendor/oppo",
+        "revision":    "android-4.4"
+    }
+]

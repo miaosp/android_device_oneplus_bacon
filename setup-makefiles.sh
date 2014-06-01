@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=oppo
-DEVICE=find7a
+DEVICE=bacon
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

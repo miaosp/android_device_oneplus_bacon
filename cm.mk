@@ -22,6 +22,10 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
+TARGET_BOOTANIMATION_NAME := vertical-1080x1920
+
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -31,8 +35,9 @@ $(call inherit-product, device/oppo/bacon/device.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := cm_bacon
-PRODUCT_DEVICE := Bacon
+PRODUCT_DEVICE := bacon
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := one
 PRODUCT_MANUFACTURER := OnePlus
+
 
