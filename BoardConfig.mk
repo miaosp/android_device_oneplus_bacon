@@ -2,15 +2,13 @@
 -include vendor/oppo/bacon/BoardConfigVendor.mk
 
 # inherit from the common repository
-include device/oppo/common/BoardConfigCommon.mk
+include device/oppo/msm8974-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/oppo/bacon
+LOCAL_PATH := device/oneplus/bacon
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := bacon
 TARGET_OTA_ASSERT_DEVICE := bacon
-# Inline kernel
-TARGET_KERNEL_CONFIG := msm8974_find7op_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
@@ -36,19 +34,32 @@ TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.selinux=permissive androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bacon user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_BASE :=  0x80200000
 #BOARD_FORCE_RAMDISK_ADDRESS := 0x05000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 #BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-BOARD_CUSTOM_BOOTIMG_MK := device/oppo/bacon/mkbootimg.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00FF0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00FF0000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+#get from w7ds thanks 
+TARGET_USE_PREBUILT := true
+
+ifeq ($(TARGET_USE_PREBUILT),true)
+TARGET_PREBUILT_KERNEL := device/oneplus/bacon/prebuilt/kernel
+BOARD_MKBOOTIMG_ARGS    += --dt device/oneplus/bacon/prebuilt/dt.img
+else
+TARGET_KERNEL_SOURCE := kernel/oneplus/msm8974 #We don't have it yet.
+# Inline kernel
+TARGET_KERNEL_CONFIG := msm8974_find7op_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/oneplus/bacon/mkbootimg.mk
+endif
+
 
 # global
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -94,7 +105,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 
-BOARD_EGL_CFG := device/oppo/bacon/configs/egl.cfg
+BOARD_EGL_CFG := device/oneplus/bacon/configs/egl.cfg
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
@@ -128,8 +139,3 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # binaries. Decrease the size if RAM or Flash Storage size is a limitation
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DNO_SECURE_DISCARD
-TARGET_USES_QCOM_BSP := true
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true

@@ -31,7 +31,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/oppo/bacon/device.mk)
+$(call inherit-product, device/oneplus/bacon/device.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := cm_bacon

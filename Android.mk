@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Hack for build dt.img
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/include)
+
 LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter bacon,$(TARGET_DEVICE)),)

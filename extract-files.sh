@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VENDOR=oppo
+VENDOR=oneplus
 DEVICE=bacon
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
