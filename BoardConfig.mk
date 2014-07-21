@@ -1,11 +1,11 @@
 # inherit from the proprietary version
--include vendor/oppo/find7a/BoardConfigVendor.mk
+-include vendor/oneplus/bacon/BoardConfigVendor.mk
 
-LOCAL_PATH := device/oppo/find7a
+LOCAL_PATH := device/oneplus/bacon
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := find7a
-TARGET_OTA_ASSERT_DEVICE := find7a,FIND7
+TARGET_BOOTLOADER_BOARD_NAME := MSM8974
+TARGET_OTA_ASSERT_DEVICE := bacon,A0001
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
@@ -36,7 +36,7 @@ BOARD_KERNEL_BASE :=  0x80200000
 #BOARD_FORCE_RAMDISK_ADDRESS := 0x05000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-BOARD_CUSTOM_BOOTIMG_MK := device/oppo/find7a/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/oneplus/bacon/mkbootimg.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00F00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00F00000
@@ -93,7 +93,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 
-BOARD_EGL_CFG := device/oppo/find7a/configs/egl.cfg
+BOARD_EGL_CFG := device/oneplus/bacon/configs/egl.cfg
 
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
@@ -102,7 +102,7 @@ SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # Recovery:Start
 
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/configs/fstab.find7a
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/configs/fstab.bacon
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
